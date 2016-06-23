@@ -18,5 +18,6 @@ import { RoutobjectComponent } from './+routobject';
 ])
 
 export class MywebsiteAppComponent {
-  title = 'mywebsite works!';
+  title = 'My Website';
+  number = 2;
 }

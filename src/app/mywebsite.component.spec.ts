@@ -15,8 +15,17 @@ describe('App: Mywebsite', () => {
     expect(app).toBeTruthy();
   }));
 
-  it('should have as title \'mywebsite works!\'',
+  it('should have as title \'My Website\'',
       inject([MywebsiteAppComponent], (app: MywebsiteAppComponent) => {
-    expect(app.title).toEqual('mywebsite works!');
+    expect(app.title).toEqual('My Website');
   }));
 });
+
+describe('my own test', function(){
+
+  it('number schould be positive',
+    inject([MywebsiteAppComponent], (app: MywebsiteAppComponent) => {
+      expect(app).toBeGreaterThan(-1);
+    }));
+
+})
