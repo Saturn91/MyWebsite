@@ -1,0 +1,13 @@
+<body>
+  <H2>
+    create a new person
+  </H2>
+  <form [ngFormModel]="form" (ngSubmit)="confirm(form.value)">
+    <input ngControl="idControl" type="number" placeholder="0">
+    <input ngControl="firstNameControl" type="Firstname" placeholder="Hans">
+    <input ngControl="lastNameControl" type="Lastname" placeholder="Meier">
+    <input ngControl="gender" type="Gender" placeholder="m">
+    <button type="submit">submit</button>
+  </form>
+</body>
+
