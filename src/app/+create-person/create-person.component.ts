@@ -9,8 +9,7 @@ import {Validators, FormBuilder, ControlGroup} from '@angular/common';
 })
 export class CreatePersonComponent implements OnInit {
   private form: ControlGroup;
-  private createdPatient: string;
-  private genders: Array<string> = ['MALE', 'FEMALE'];
+  private genders: Array<string> = ['M', 'F'];
   private currentGender: string = this.genders[0];
   private fb: FormBuilder = new FormBuilder();
   constructor(){
@@ -23,7 +22,16 @@ export class CreatePersonComponent implements OnInit {
   }
 
   confirm(value: any){
-    console.log('id:' + value.idControl + ' name: ' + value.firstNameControl + " " + value.lastNameControl + " gender: " + value.gender);
+    if(value.idControl > 0 && value.firstNameControl != '' && value.lastNameControl != ''){
+      if(value.gender == 'M' || value.gender == 'F' ){
+        console.log('id: ' + value.idControl + ' name: ' + value.firstNameControl + " " + value.lastNameControl + " gender: " + value.gender);
+      }else{
+        console.log(value.gender + ": wrong Argument! Must be F or M" )
+      }
+    }else{
+      console.log(" all Fields must be filled!" )
+    }
+
   }
 
   ngOnInit() {
